@@ -1,0 +1,12 @@
+   _____   _   _    ____    ______          _____   _______    ____    _____    ______
+  / ____| | | | |  / __ \  |  ____|        / ____| |__   __|  / __ \  |  __ \  |  ____|
+ | (___   | |_| | | |  | | | |__          | (___      | |    | |  | | | |__) | | |__
+  \___ \  |  _  | | |  | | |  __|          \___ \     | |    | |  | | |  _  /  |  __|
+  ____) | | | | | | |__| | | |____         ____) |    | |    | |__| | | | \ \  | |____
+ |_____/  |_| |_|  \____/  |______|       |_____/     |_|     \____/  |_|  \_\ |______|
+
+ DanhPN | DuongNL | NgocLB
+ ${AnsiColor.BRIGHT_BLUE}:: Cao Đẳng FPT Polytechnic 🤓  :: Running Spring Boot ${spring-boot.version} ::
+ :: https://github.com/PhanNDanh/ShoeStore.git ::${AnsiColor.DEFAULT}
+ :: http://localhost:33321/api/swagger-ui/index.html ::${AnsiColor.DEFAULT}
+

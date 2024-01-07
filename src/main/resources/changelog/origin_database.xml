@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.19.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+
+    <changeSet id="1697210568637-1" author="LE BAO NGOC (generated)">
+        <createTable tableName="member_account">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="username" type="VARCHAR(255)"/>
+            <column name="password" type="VARCHAR(255)"/>
+            <column name="fullname" type="VARCHAR(255)"/>
+            <column name="gender" type="BIT(1)"/>
+            <column name="date_of_birth" type="date"/>
+            <column name="email" type="VARCHAR(255)"/>
+            <column name="avatar" type="MEDIUMBLOB"/>
+            <column name="phone_number" type="VARCHAR(255)"/>
+            <column name="created_time" type="datetime"/>
+            <column name="updated_time" type="datetime"/>
+            <column name="status" type="INT"/>
+            <column name="is_deleted" type="BIT(1)"/>
+            <column name="address_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1697210568637-2" author="LE BAO NGOC (generated)">
+        <createTable tableName="member_account_role">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="id_member_account" type="BIGINT"/>
+            <column name="id_role" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1697210568637-3" author="LE BAO NGOC (generated)">
+        <createTable tableName="address">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="provice_code" type="VARCHAR(255)"/>
+            <column name="district_code" type="VARCHAR(255)"/>
+            <column name="commune_code" type="VARCHAR(255)"/>
+            <column name="address_detail" type="VARCHAR(255)"/>
+            <column name="created_by" type="VARCHAR(30)"/>
+            <column name="updated_by" type="VARCHAR(30)"/>
+            <column name="created_time" type="datetime"/>
+            <column name="updated_time" type="datetime"/>
+            <column name="status" type="INT"/>
+            <column name="is_deleted" type="BIT(1)"/>
+            <column name="client_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1697210568637-4" author="LE BAO NGOC (generated)">
+        <createTable tableName="brand">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="code" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="created_by" type="VARCHAR(30)"/>
+            <column name="updated_by" type="VARCHAR(30)"/>
+            <column name="created_time" type="datetime"/>
+            <column name="updated_time" type="datetime"/>
+            <column name="is_deleted" type="BIT(1)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1697210568637-5" author="LE BAO NGOC (generated)">
+        <createTable tableName="client">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="username" type="VARCHAR(255)"/>
+            <column name="password" type="VARCHAR(255)"/>
+            <column name="fullname" type="VARCHAR(255)"/>
+            <column name="gender" type="BIT(1)"/>
+            <column name="date_of_birth" type="date"/>
+            <column name="email" type="VARCHAR(255)"/>
+            <column name="avatar" type="MEDIUMBLOB"/>
+            <column name="phone_number" type="VARCHAR(255)"/>
+            <column name="created_time" type="datetime"/>
+            <column name="updated_time" type="datetime"/>
+            <column name="total_points" type="INT"/>
+            <column name="status" type="INT"/>
+            <column name="is_deleted" type="BIT(1)"/>
+            <column name="role_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1697210568637-6" author="LE BAO NGOC (generated)">
+        <createTable tableName="color">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="code" type="TEXT"/>
+            <column name="name" type="TEXT"/>
+            <column name="created_by" type="TEXT"/>
+            <column name="updated_by" type="TEXT"/>
+            <column name="created_time" type="TEXT"/>
+            <column name="updated_time" type="TEXT"/>
+            <column name="is_deleted" type="TEXT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1697210568637-7" author="LE BAO NGOC (generated)">
+        <createTable tableName="comment">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="comment" type="VARCHAR(1000)"/>
+            <column name="created_date" type="datetime"/>
+            <column name="vote" type="INT"/>
+            <column name="status" type="INT"/>
+            <column name="client_id" type="BIGINT"/>
+            <column name="shoes_detail_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1697210568637-8" author="LE BAO NGOC (generated)">
+        <createTable tableName="cushion">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="code" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="created_time" type="datetime"/>
+            <column name="updated_time" type="datetime"/>
+            <column name="created_by" type="VARCHAR(30)"/>
+            <column name="updated_by" type="VARCHAR(30)"/>
+            <column name="is_deleted" type="BIT(1)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1697210568637-9" author="LE BAO NGOC (generated)">
+        <createTable tableName="customer_order">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="member_account_id" type="BIGINT"/>
+            <column name="client_id" type="BIGINT"/>
+            <column name="discount_id" type="BIGINT"/>
+            <column name="discount_periods_id" type="BIGINT"/>
+            <column name="code" type="VARCHAR(255)"/>
+            <column name="total_money" type="DECIMAL(38, 2)"/>
+            <column name="total_payment" type="DECIMAL(38, 2)"/>
+            <column name="payment_method" type="INT"/>
+            <column name="date_payment" type="datetime"/>
+            <column name="created_time" type="datetime"/>
+            <column name="updated_time" type="datetime"/>
+            <column name="sale_status" type="BIT(1)"/>
+            <column name="points" type="INT"/>
+            <column name="status" type="INT"/>
+            <column name="created_by" type="VARCHAR(30)"/>
+            <column name="updated_by" type="VARCHAR(30)"/>
+            <column name="is_deleted" type="BIT(1)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1697210568637-10" author="LE BAO NGOC (generated)">
+        <createTable tableName="delivery_orders">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="code" type="VARCHAR(30)"/>
+            <column name="order_id" type="BIGINT"/>
+            <column name="ship_date" type="datetime"/>
+            <column name="cancellation_date" type="datetime"/>
+            <column name="received_date" type="datetime"/>
+            <column name="delivery_address" type="VARCHAR(255)"/>
+            <column name="recipient_name" type="VARCHAR(255)"/>
+            <column name="recipient_phone" type="VARCHAR(255)"/>
+            <column name="delivery_cost" type="DECIMAL(38, 2)"/>
+            <column name="created_by" type="VARCHAR(30)"/>
+            <column name="updated_by" type="VARCHAR(30)"/>
+            <column name="created_time" type="datetime"/>
+            <column name="updated_time" type="datetime"/>
+            <column name="status" type="INT"/>
+            <column name="is_deleted" type="BIT(1)"/>
+            <column name="address_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1697210568637-11" author="LE BAO NGOC (generated)">
+        <createTable tableName="design_style">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="code" type="VARCHAR(15)"/>
+            <column name="name" type="VARCHAR(30)"/>
+            <column name="created_by" type="VARCHAR(30)"/>
+            <column name="updated_by" type="VARCHAR(30)"/>
+            <column name="created_time" type="datetime"/>
+            <column name="updated_time" type="datetime"/>
+            <column name="is_deleted" type="BIT(1)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1697210568637-12" author="LE BAO NGOC (generated)">
+        <createTable tableName="discount_periods">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="code" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="created_by" type="VARCHAR(30)"/>
+            <column name="updated_by" type="VARCHAR(30)"/>
+            <column name="start_date" type="datetime"/>
+            <column name="end_date" type="datetime"/>
+            <column name="min_price" type="DECIMAL(38, 2)"/>
+            <column name="sale_percent" type="INT"/>
+            <column name="created_time" type="datetime"/>
+            <column name="updated_time" type="datetime"/>
+            <column name="status" type="INT"/>
+            <column name="is_deleted" type="BIT(1)"/>
+            <column name="gift_id" type="BIGINT"/>
+            <column name="type_period" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1697210568637-13" author="LE BAO NGOC (generated)">
+        <createTable tableName="discounts">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="code" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="sale_price" type="DECIMAL(38, 2)"/>
+            <column name="sale_percent" type="INT"/>
+            <column name="quantity" type="INT"/>
+            <column name="min_price" type="DECIMAL(38, 2)"/>
+            <column name="description" type="TINYTEXT"/>
+            <column name="start_date" type="datetime"/>
+            <column name="end_date" type="datetime"/>
+            <column name="created_by" type="VARCHAR(45)"/>
+            <column name="updated_by" type="VARCHAR(45)"/>
+            <column name="created_time" type="datetime"/>
+            <column name="updated_time" type="datetime"/>
+            <column name="status" type="INT"/>
+            <column name="is_deleted" type="BIT(1)"/>
+            <column name="discount_type" type="INT"/>
+            <column name="available" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1697210568637-14" author="LE BAO NGOC (generated)">
+        <createTable tableName="exchange">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="refund_amount" type="DECIMAL(10)"/>
+            <column name="exchange_date" type="datetime"/>
+            <column name="exchange_reason" type="VARCHAR(200)"/>
+            <column name="exchange_type" type="BIT(1)"/>
+            <column name="status" type="INT"/>
+            <column name="order_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1697210568637-15" author="LE BAO NGOC (generated)">
+        <createTable tableName="image">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="image_uri" type="VARCHAR(255)"/>
+            <column name="image_name" type="VARCHAR(255)"/>
+            <column name="created_by" type="VARCHAR(45)"/>
+            <column name="updated_by" type="VARCHAR(45)"/>
+            <column name="created_time" type="datetime"/>
+            <column name="updated_time" type="datetime"/>
+            <column name="is_deleted" type="BIT(1)"/>
+            <column name="shoes_detail_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1697210568637-16" author="LE BAO NGOC (generated)">
+        <createTable tableName="lining">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="code" type="VARCHAR(15)"/>
+            <column name="name" type="VARCHAR(30)"/>
+            <column name="created_by" type="VARCHAR(30)"/>
+            <column name="updated_by" type="VARCHAR(30)"/>
+            <column name="created_time" type="datetime"/>
+            <column name="updated_time" type="datetime"/>
+            <column name="is_deleted" type="BIT(1)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1697210568637-17" author="LE BAO NGOC (generated)">
+        <createTable tableName="order_detail">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="quantity" type="INT"/>
+            <column name="total_price" type="DECIMAL(38, 2)"/>
+            <column name="price" type="DECIMAL(38, 2)"/>
+            <column name="is_deleted" type="BIT(1)"/>
+            <column name="shoes_details_id" type="BIGINT"/>
+            <column name="order_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1697210568637-18" author="LE BAO NGOC (generated)">
+        <createTable tableName="origin">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="code" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="created_time" type="datetime"/>
+            <column name="updated_time" type="datetime"/>
+            <column name="created_by" type="VARCHAR(30)"/>
+            <column name="updated_by" type="VARCHAR(30)"/>
+            <column name="is_deleted" type="BIT(1)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1697210568637-20" author="LE BAO NGOC (generated)">
+        <createTable tableName="role">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="role_name" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1697210568637-21" author="LE BAO NGOC (generated)">
+        <createTable tableName="shoes">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="code" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="design_style_id" type="BIGINT"/>
+            <column name="brand_id" type="BIGINT"/>
+            <column name="lining_id" type="BIGINT"/>
+            <column name="sole_id" type="BIGINT"/>
+            <column name="skin_type_id" type="BIGINT"/>
+            <column name="origin_id" type="BIGINT"/>
+            <column name="cushion_id" type="BIGINT"/>
+            <column name="toe_id" type="BIGINT"/>
+            <column name="img_uri" type="VARCHAR(255)"/>
+            <column name="img_name" type="VARCHAR(30)"/>
+            <column name="description" type="TINYTEXT"/>
+            <column name="created_by" type="VARCHAR(30)"/>
+            <column name="updated_by" type="VARCHAR(30)"/>
+            <column name="created_time" type="datetime"/>
+            <column name="updated_time" type="datetime"/>
+            <column name="is_deleted" type="BIT(1)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1697210568637-22" author="LE BAO NGOC (generated)">
+        <createTable tableName="shoes_detail">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="shoes_id" type="BIGINT"/>
+            <column name="size_id" type="BIGINT"/>
+            <column name="color_id" type="BIGINT"/>
+            <column name="promo_id" type="BIGINT"/>
+            <column name="code" type="VARCHAR(255)"/>
+            <column name="price" type="DECIMAL(38, 2)"/>
+            <column name="quantity" type="INT"/>
+            <column name="status" type="INT"/>
+            <column name="discount_price" type="DECIMAL(38, 2)"/>
+            <column name="created_by" type="VARCHAR(30)"/>
+            <column name="updated_by" type="VARCHAR(30)"/>
+            <column name="created_time" type="datetime"/>
+            <column name="updated_time" type="datetime"/>
+            <column name="qr_code_uri" type="VARCHAR(255)"/>
+            <column name="is_deleted" type="BIT(1)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1697210568637-23" author="LE BAO NGOC (generated)">
+        <createTable tableName="shoes_exchange">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="quantity" type="INT"/>
+            <column name="status" type="INT"/>
+            <column name="exchange_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1697210568637-24" author="LE BAO NGOC (generated)">
+        <createTable tableName="size">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="code" type="VARCHAR(15)"/>
+            <column name="name" type="VARCHAR(30)"/>
+            <column name="created_by" type="VARCHAR(30)"/>
+            <column name="updated_by" type="VARCHAR(30)"/>
+            <column name="created_time" type="datetime"/>
+            <column name="updated_time" type="datetime"/>
+            <column name="is_deleted" type="BIT(1)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1697210568637-25" author="LE BAO NGOC (generated)">
+        <createTable tableName="skin_type">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="code" type="VARCHAR(15)"/>
+            <column name="name" type="VARCHAR(30)"/>
+            <column name="created_by" type="VARCHAR(30)"/>
+            <column name="updated_by" type="VARCHAR(30)"/>
+            <column name="created_time" type="datetime"/>
+            <column name="updated_time" type="datetime"/>
+            <column name="is_deleted" type="BIT(1)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1697210568637-26" author="LE BAO NGOC (generated)">
+        <createTable tableName="sole">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="code" type="VARCHAR(15)"/>
+            <column name="name" type="VARCHAR(30)"/>
+            <column name="created_by" type="VARCHAR(30)"/>
+            <column name="updated_by" type="VARCHAR(30)"/>
+            <column name="created_time" type="datetime"/>
+            <column name="updated_time" type="datetime"/>
+            <column name="is_deleted" type="BIT(1)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1697210568637-27" author="LE BAO NGOC (generated)">
+        <createTable tableName="toe">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="code" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="created_time" type="datetime"/>
+            <column name="updated_time" type="datetime"/>
+            <column name="created_by" type="VARCHAR(30)"/>
+            <column name="updated_by" type="VARCHAR(30)"/>
+            <column name="is_deleted" type="BIT(1)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1697210568637-28" author="LE BAO NGOC (generated)">
+        <createTable tableName="free_gift">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="code" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="image" type="MEDIUMBLOB"/>
+            <column name="quantity" type="INT"/>
+            <column name="created_time" type="datetime"/>
+            <column name="updated_time" type="datetime"/>
+            <column name="created_by" type="VARCHAR(30)"/>
+            <column name="updated_by" type="VARCHAR(30)"/>
+            <column name="status" type="INT"/>
+            <column name="is_deleted" type="BIT(1)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="1697210568637-29" author="LE BAO NGOC (generated)">
+        <createTable tableName="discounts_shoes_detail">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="promo_id" type="BIGINT"/>
+            <column name="shoes_detail_id" type="BIGINT"/>
+            <column name="discount_price" type="DECIMAL(38, 2)"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

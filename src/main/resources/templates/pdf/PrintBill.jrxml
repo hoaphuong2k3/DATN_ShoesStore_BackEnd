@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Bill_Print" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9d2afbf7-d0e0-4284-bd42-03b33de87b1a">
+    <subDataset name="data" uuid="c42118b6-0d86-4b2c-b799-4b3ba087c07a">
+        <queryString>
+            <![CDATA[]]>
+        </queryString>
+        <field name="sizeName" class="java.lang.String"/>
+        <field name="colorName" class="java.lang.String"/>
+        <field name="shoesName" class="java.lang.String"/>
+        <field name="stt" class="java.lang.Integer"/>
+        <field name="quantity" class="java.lang.Integer"/>
+        <field name="price" class="java.math.BigDecimal"/>
+        <field name="totalPrice" class="java.math.BigDecimal"/>
+    </subDataset>
+    <parameter name="code" class="java.lang.String"/>
+    <parameter name="totalMoney" class="java.math.BigDecimal"/>
+    <parameter name="addressDelivery" class="java.lang.String"/>
+    <parameter name="timeNow" class="java.sql.Timestamp"/>
+    <parameter name="accountName" class="java.lang.String"/>
+    <parameter name="nameClient" class="java.lang.String"/>
+    <parameter name="phoneClient" class="java.lang.String"/>
+    <parameter name="totalPaymentIntoWord" class="java.lang.String"/>
+    <parameter name="coinRefund" class="java.lang.Integer"/>
+    <parameter name="dataTable" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+    <parameter name="accumulatedCoins" class="java.lang.Integer"/>
+    <parameter name="totalPayment" class="java.math.BigDecimal"/>
+    <parameter name="priceDiscountPeriod" class="java.math.BigDecimal"/>
+    <parameter name="logoPath" class="java.io.InputStream"/>
+    <queryString>
+        <![CDATA[]]>
+    </queryString>
+    <group name="Group1">
+        <groupHeader>
+            <band height="61">
+                <staticText>
+                    <reportElement x="20" y="0" width="90" height="20" uuid="21a91116-05fd-4a23-b329-cb7afb803f1a"/>
+                    <textElement textAlignment="Left" verticalAlignment="Middle">
+                        <font isBold="true"/>
+                    </textElement>
+                    <text><![CDATA[Khách hàng :]]></text>
+                </staticText>
+                <staticText>
+                    <reportElement x="20" y="20" width="130" height="20" uuid="c499002b-0689-4cba-b0b0-d2ef256bd523"/>
+                    <textElement textAlignment="Left" verticalAlignment="Middle">
+                        <font isBold="true"/>
+                    </textElement>
+                    <text><![CDATA[Điện thoại khách hàng :]]></text>
+                </staticText>
+                <staticText>
+                    <reportElement x="20" y="41" width="50" height="20" uuid="f239018c-e25a-47c1-b323-00e8d211628f"/>
+                    <textElement textAlignment="Left" verticalAlignment="Middle">
+                        <font isBold="true"/>
+                    </textElement>
+                    <text><![CDATA[Địa chỉ :]]></text>
+                </staticText>
+                <textField>
+                    <reportElement x="174" y="39" width="306" height="20" uuid="cf842d1a-93ef-4abf-8783-6cbe38fd6dd6"/>
+                    <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                    <textFieldExpression><![CDATA[$P{addressDelivery}]]></textFieldExpression>
+                </textField>
+                <textField>
+                    <reportElement x="174" y="0" width="306" height="20" uuid="88fd09f8-74e6-49a2-aa38-64a9053db606"/>
+                    <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                    <textFieldExpression><![CDATA[$P{nameClient}]]></textFieldExpression>
+                </textField>
+                <textField>
+                    <reportElement x="174" y="21" width="306" height="20" uuid="1e243df8-96ce-4771-87df-92eaa2fd2ea2"/>
+                    <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                    <textFieldExpression><![CDATA[$P{phoneClient}]]></textFieldExpression>
+                </textField>
+            </band>
+        </groupHeader>
+        <groupFooter>
+            <band height="122">
+                <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                <staticText>
+                    <reportElement x="20" y="2" width="492" height="13" uuid="ba894f82-ce84-440a-b701-d8092b360bb0"/>
+                    <textElement textAlignment="Center" rotation="UpsideDown"/>
+                    <text><![CDATA[__________________________________________________________________________________________________]]></text>
+                </staticText>
+                <staticText>
+                    <reportElement x="217" y="33" width="120" height="20" uuid="5e52942f-6e2b-487d-9b54-b3fe3c379198"/>
+                    <textElement verticalAlignment="Middle"/>
+                    <text><![CDATA[Voucher giảm giá :]]></text>
+                </staticText>
+                <staticText>
+                    <reportElement x="218" y="61" width="120" height="20" uuid="9c1294b3-d03a-4a55-a8e8-3d203e4ee28c"/>
+                    <textElement verticalAlignment="Middle"/>
+                    <text><![CDATA[Xu tích luỹ :]]></text>
+                </staticText>
+                <staticText>
+                    <reportElement x="218" y="87" width="122" height="30" uuid="c419ee6f-5ce3-45e1-a9fc-d521f701aaeb"/>
+                    <textElement verticalAlignment="Middle">
+                        <font isBold="true"/>
+                    </textElement>
+                    <text><![CDATA[TỔNG THANH TOÁN :]]></text>
+                </staticText>
+                <textField>
+                    <reportElement x="400" y="35" width="120" height="20" uuid="2ced190b-a2e3-45e0-9d18-066cea199521"/>
+                    <textElement verticalAlignment="Middle"/>
+                    <textFieldExpression><![CDATA[$P{priceDiscountPeriod}]]></textFieldExpression>
+                </textField>
+                <textField>
+                    <reportElement x="402" y="61" width="118" height="20" uuid="461a1a31-3cd1-4ad8-a05a-c5903d8d41c4"/>
+                    <textElement verticalAlignment="Middle"/>
+                    <textFieldExpression><![CDATA[$P{accumulatedCoins}]]></textFieldExpression>
+                </textField>
+                <textField>
+                    <reportElement x="20" y="19" width="154" height="20" uuid="e8faca75-495a-42f1-b354-e65578fe6ec5"/>
+                    <textFieldExpression><![CDATA["( Hoàn xu : " +$P{coinRefund} +  ")"]]></textFieldExpression>
+                </textField>
+                <textField>
+                    <reportElement x="402" y="88" width="118" height="30" uuid="03129bf9-fe0a-43b3-95b4-9de5d1336744"/>
+                    <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                    <textFieldExpression><![CDATA[$P{totalPayment}]]></textFieldExpression>
+                </textField>
+            </band>
+        </groupFooter>
+    </group>
+    <group name="Group2">
+        <groupHeader>
+            <band height="50"/>
+        </groupHeader>
+        <groupFooter>
+            <band height="56">
+                <staticText>
+                    <reportElement x="20" y="0" width="100" height="30" uuid="83ab9ffa-0d70-4908-945e-d0c33faa77e2"/>
+                    <textElement verticalAlignment="Middle">
+                        <font isBold="true"/>
+                    </textElement>
+                    <text><![CDATA[TỔNG TIỀN :]]></text>
+                </staticText>
+                <textField>
+                    <reportElement x="390" y="0" width="120" height="30" uuid="2de3a05c-d3df-4bea-8f4f-61141913d49f"/>
+                    <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                    <textFieldExpression><![CDATA[$P{totalMoney}]]></textFieldExpression>
+                </textField>
+                <textField>
+                    <reportElement x="140" y="31" width="371" height="20" uuid="0851a4a4-1c1c-4434-b360-9a703a283d9d"/>
+                    <textElement textAlignment="Center" verticalAlignment="Middle">
+                        <font fontName="Bangla MN" isBold="true" isItalic="true"/>
+                    </textElement>
+                    <textFieldExpression><![CDATA[$P{totalPaymentIntoWord}]]></textFieldExpression>
+                </textField>
+                <staticText>
+                    <reportElement x="20" y="14" width="492" height="13" uuid="8e84bf9e-d853-46f6-83a2-87700e2b82ac"/>
+                    <textElement textAlignment="Center"/>
+                    <text><![CDATA[__________________________________________________________________________________________________]]></text>
+                </staticText>
+                <staticText>
+                    <reportElement x="20" y="31" width="120" height="20" uuid="f54e84d5-6c7e-49fc-bc0f-b594998c4fe8"/>
+                    <textElement verticalAlignment="Middle"/>
+                    <text><![CDATA[Tổng tiền viết bằng chữ :]]></text>
+                </staticText>
+            </band>
+        </groupFooter>
+    </group>
+    <title>
+        <band height="106" splitType="Stretch">
+            <image>
+                <reportElement x="20" y="0" width="110" height="90" uuid="caa3ef48-e4bc-4cf1-aa1c-663777889d14"/>
+                <imageExpression><![CDATA[$P{logoPath}]]></imageExpression>
+            </image>
+            <staticText>
+                <reportElement x="140" y="0" width="110" height="20" uuid="4dbbf932-f5a2-4118-92f3-96a2d9b0bd71"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="Arial Rounded MT Bold" size="16" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Leather Gent]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="150" y="30" width="100" height="14" uuid="41097aba-3ea2-44ec-9031-218290457343"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="11"/>
+                </textElement>
+                <text><![CDATA[Trịnh Văn Bô]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="149" y="52" width="100" height="14" uuid="f2532734-19c3-49ad-a39f-257333e7a33f"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="11"/>
+                </textElement>
+                <text><![CDATA[Nam Từ Liêm, HN]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="340" y="5" width="62" height="21" uuid="3ac47699-7108-41cb-b6a0-a862f32bc210"/>
+                <textElement>
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Hoá đơn]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="412" y="3" width="100" height="20" uuid="c8241a79-46df-4058-a540-9df9ece95436"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="12" isBold="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{code}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="341" y="29" width="171" height="18" uuid="8421d92c-cf61-49f3-8646-30ce12246876"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$P{timeNow}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="343" y="53" width="55" height="18" uuid="b6237acc-5539-4706-8843-b1644f3f78e3"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <text><![CDATA[Nhân viên :]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="410" y="53" width="100" height="19" uuid="2cdc6209-df01-4af1-8cdc-fca8b8c8ab11"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$P{accountName}]]></textFieldExpression>
+            </textField>
+        </band>
+    </title>
+    <pageHeader>
+        <band height="53" splitType="Stretch">
+            <staticText>
+                <reportElement x="20" y="10" width="130" height="20" uuid="8edc7a9d-d74a-4a9c-a885-64f1438e8b9a"/>
+                <textElement>
+                    <font fontName="Times New Roman" size="16" isBold="true"/>
+                </textElement>
+                <text><![CDATA[HOÁ  ĐƠN]]></text>
+            </staticText>
+        </band>
+    </pageHeader>
+    <detail>
+        <band height="138" splitType="Stretch">
+            <staticText>
+                <reportElement x="20" y="6" width="492" height="13" uuid="7e1b596d-329b-4101-b73b-f2b2557e9dc9"/>
+                <textElement textAlignment="Center"/>
+                <text><![CDATA[__________________________________________________________________________________________________]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="20" y="19" width="30" height="21" uuid="f8ad0fd4-f894-4777-ae30-c11426f31ff0"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[STT]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="50" y="20" width="201" height="21" uuid="f21ebd8f-a55d-4f8f-a993-a71cff13423a"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[SẢN PHẨM]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="380" y="20" width="130" height="21" uuid="29a3d7d0-139f-4816-acac-544ef2556dba"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[THÀNH TIỀN]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="320" y="20" width="60" height="21" uuid="846cbcc1-f531-4b61-b46b-7fdbcafeec94"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[ĐƠN GIÁ]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="251" y="20" width="69" height="21" uuid="8989d500-c103-4d9c-9950-df4efb24aa2d"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[SỐ LƯỢNG]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="19" y="43" width="492" height="13" uuid="533337e1-f23d-4c94-a68c-5f82c36d1502"/>
+                <textElement textAlignment="Center" rotation="UpsideDown"/>
+                <text><![CDATA[__________________________________________________________________________________________________]]></text>
+            </staticText>
+            <componentElement>
+                <reportElement x="20" y="59" width="490" height="50" uuid="09f328ce-6c60-45e8-93e1-71d89402f2b5"/>
+                <jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+                    <datasetRun subDataset="data" uuid="4e2177ed-3ce6-448c-8611-28fdd495e84a">
+                        <dataSourceExpression><![CDATA[$P{dataTable}]]></dataSourceExpression>
+                    </datasetRun>
+                    <jr:listContents height="50" width="490">
+                        <textField>
+                            <reportElement x="0" y="0" width="30" height="50" uuid="d4770f55-8909-4672-bec6-e19484626154"/>
+                            <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                            <textFieldExpression><![CDATA[$F{stt}]]></textFieldExpression>
+                        </textField>
+                        <textField>
+                            <reportElement x="63" y="29" width="66" height="19" uuid="54f56ab1-25a0-4867-add0-efcdc7a4e31d"/>
+                            <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                            <textFieldExpression><![CDATA[$F{sizeName}]]></textFieldExpression>
+                        </textField>
+                        <textField>
+                            <reportElement x="240" y="0" width="60" height="48" uuid="f7911ca9-4ce6-4bcf-9132-0c3178bd335f"/>
+                            <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                            <textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+                        </textField>
+                        <textField>
+                            <reportElement x="300" y="0" width="90" height="48" uuid="32b95eb7-ec40-41dc-914a-63440dd9245b"/>
+                            <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                            <textFieldExpression><![CDATA[$F{price}]]></textFieldExpression>
+                        </textField>
+                        <textField>
+                            <reportElement x="390" y="0" width="100" height="48" uuid="2a724457-09d6-468c-b19e-2fffd42e197d"/>
+                            <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                            <textFieldExpression><![CDATA[$F{totalPrice}]]></textFieldExpression>
+                        </textField>
+                        <textField>
+                            <reportElement x="32" y="5" width="200" height="19" uuid="eff18ed4-cc26-4295-8b37-e5ce941aa268"/>
+                            <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                            <textFieldExpression><![CDATA[$F{shoesName}]]></textFieldExpression>
+                        </textField>
+                        <textField>
+                            <reportElement x="162" y="30" width="77" height="19" uuid="36144485-1f26-4dd1-a943-f845346e6297"/>
+                            <textElement textAlignment="Left" verticalAlignment="Middle"/>
+                            <textFieldExpression><![CDATA[$F{colorName}]]></textFieldExpression>
+                        </textField>
+                        <staticText>
+                            <reportElement x="31" y="28" width="30" height="20" uuid="acbbb1ce-8aab-4084-8b60-95a735df842c"/>
+                            <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                            <text><![CDATA[Size :]]></text>
+                        </staticText>
+                        <staticText>
+                            <reportElement x="131" y="29" width="30" height="20" uuid="ef55282f-58e8-4750-9fef-2d8c854f880b"/>
+                            <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                            <text><![CDATA[Màu :]]></text>
+                        </staticText>
+                    </jr:listContents>
+                </jr:list>
+            </componentElement>
+            <staticText>
+                <reportElement x="19" y="115" width="492" height="13" uuid="0ff5d0e7-cc46-43ed-a320-47e46586f126"/>
+                <textElement textAlignment="Center" rotation="UpsideDown"/>
+                <text><![CDATA[__________________________________________________________________________________________________]]></text>
+            </staticText>
+        </band>
+    </detail>
+</jasperReport>

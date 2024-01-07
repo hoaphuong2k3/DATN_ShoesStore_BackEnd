@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <!-- Thêm th:layout-type để định nghĩa loại layout (default hoặc error) -->
+    <meta th:layout-type="error" />
+
+    <!-- Thêm một số CSS để làm cho trang đẹp hơn -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #495057;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .error-container {
+            text-align: center;
+        }
+
+        h1 {
+            color: #dc3545;
+        }
+
+        p {
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+<div class="error-container">
+    <h1>Error</h1>
+    <p th:text="${error}"></p>
+</div>
+</body>
+</html>

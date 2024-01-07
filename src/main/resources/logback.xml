@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!-- Sử dụng giá trị mặc định từ Spring Boot cho logging -->
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
+    <!-- Appender cho hiển thị log trên console -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+    </appender>
+
+    <!-- Cấu hình root logger ghi log lên console với mức độ info trở lên -->
+    <root level="info">
+        <appender-ref ref="CONSOLE" />
+    </root>
+
+</configuration>

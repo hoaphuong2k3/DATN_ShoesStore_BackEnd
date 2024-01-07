@@ -1,0 +1,77 @@
+aws:
+    accessKeyId: AKIAT7I2BLVVM6G3QL6J
+    region: ap-southeast-1
+    s3:
+        bucketName: imageshoestore
+        imageBaseUrl: https://s3-ap-southeast-1.amazonaws.com/imageshoestore/
+        secretKey: EY9NW/0UcAvCVAHTsRHLw1us0O77WUJlbKtd25nF
+excel:
+    allowedFormat: xlsx
+    maxLength: 50
+    maxSize: 50
+google:
+    api:
+        people:
+            url: https://people.googleapis.com/v1/people
+        token:
+            info:
+                url: https://www.googleapis.com/oauth2/v3/tokeninfo
+            url: https://www.googleapis.com/oauth2/v4/token
+image:
+    allowedFormats: jpeg,jpg,png
+    maxLength: 50
+    maxSize: 800
+jwt:
+    secret: daycaidaynaychinhlakhoabimatcuabandungdelorangoaidaynhenguyhiemchetnguoidayhihihi
+rabbitmq:
+    exchange:
+        type: direct
+    routing:
+        client: client
+        staff: staff
+server:
+    port: 33321
+    servlet:
+        context-path: /api
+spring:
+    banner:
+        location: classpath:banner_shoe.txt
+    datasource:
+        password: 123456
+        url: jdbc:mysql://localhost:3306/database_final_datn_g33321
+        username: root
+    jpa:
+        hibernate:
+            ddl-auto: none
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQL8Dialect
+                format_sql: true
+                show_sql: true
+    liquibase:
+        change-log: classpath:/changelog/origin_database.xml
+        default-schema: database_final_datn_g33321
+        drop-first: false
+        enabled: true
+    mail:
+        host: smtp.gmail.com
+        password: cswhuawqybzkmxuo
+        port: 587
+        properties:
+            mail:
+                smtp:
+                    auth: true
+                    starttls:
+                        enable: true
+        username: nguyenleduong03@gmail.com
+    main:
+        allow-bean-definition-overriding: true
+    security:
+        oauth2:
+            client:
+                registration:
+                    google:
+                        client-id: 266805390078-stvn471q042absdurnqaglfkg8h9atc1.apps.googleusercontent.com
+                        client-secret: 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
+                        redirect-uri: http://localhost:3000/login
+                        scope: email,profile,phone,phone
